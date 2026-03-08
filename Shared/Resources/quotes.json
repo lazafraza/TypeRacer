@@ -1,0 +1,702 @@
+[
+  {
+    "id": 1,
+    "text": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+    "source": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2,
+    "text": "Call me Ishmael.",
+    "source": "Moby-Dick",
+    "author": "Herman Melville",
+    "difficulty": "short"
+  },
+  {
+    "id": 3,
+    "text": "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness.",
+    "source": "A Tale of Two Cities",
+    "author": "Charles Dickens",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "text": "All happy families are alike; each unhappy family is unhappy in its own way.",
+    "source": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "text": "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.",
+    "source": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "text": "It was a bright cold day in April, and the clocks were striking thirteen.",
+    "source": "1984",
+    "author": "George Orwell",
+    "difficulty": "short"
+  },
+  {
+    "id": 7,
+    "text": "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.",
+    "source": "The Stranger",
+    "author": "Albert Camus",
+    "difficulty": "medium"
+  },
+  {
+    "id": 8,
+    "text": "Who controls the past controls the future. Who controls the present controls the past.",
+    "source": "1984",
+    "author": "George Orwell",
+    "difficulty": "short"
+  },
+  {
+    "id": 9,
+    "text": "There is nothing either good or bad, but thinking makes it so.",
+    "source": "Hamlet",
+    "author": "William Shakespeare",
+    "difficulty": "short"
+  },
+  {
+    "id": 10,
+    "text": "The mass of men lead lives of quiet desperation. What is called resignation is confirmed desperation.",
+    "source": "Walden",
+    "author": "Henry David Thoreau",
+    "difficulty": "medium"
+  },
+  {
+    "id": 11,
+    "text": "I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.",
+    "source": "Walden",
+    "author": "Henry David Thoreau",
+    "difficulty": "long"
+  },
+  {
+    "id": 12,
+    "text": "Whoever fights monsters should see to it that in the process he does not become a monster. And if you gaze long enough into an abyss, the abyss will gaze back into you.",
+    "source": "Beyond Good and Evil",
+    "author": "Friedrich Nietzsche",
+    "difficulty": "long"
+  },
+  {
+    "id": 13,
+    "text": "Man is condemned to be free; because once thrown into the world, he is responsible for everything he does.",
+    "source": "Being and Nothingness",
+    "author": "Jean-Paul Sartre",
+    "difficulty": "medium"
+  },
+  {
+    "id": 14,
+    "text": "The unexamined life is not worth living.",
+    "source": "Apology",
+    "author": "Plato",
+    "difficulty": "short"
+  },
+  {
+    "id": 15,
+    "text": "One cannot step twice in the same river, for other waters are continually flowing in.",
+    "source": "Fragments",
+    "author": "Heraclitus",
+    "difficulty": "short"
+  },
+  {
+    "id": 16,
+    "text": "In the depth of winter, I finally learned that within me there lay an invincible summer.",
+    "source": "Return to Tipasa",
+    "author": "Albert Camus",
+    "difficulty": "short"
+  },
+  {
+    "id": 17,
+    "text": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+    "source": "Nicomachean Ethics",
+    "author": "Aristotle",
+    "difficulty": "short"
+  },
+  {
+    "id": 18,
+    "text": "He who has a why to live for can bear almost any how.",
+    "source": "Twilight of the Idols",
+    "author": "Friedrich Nietzsche",
+    "difficulty": "short"
+  },
+  {
+    "id": 19,
+    "text": "So we beat on, boats against the current, borne back ceaselessly into the past.",
+    "source": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "difficulty": "short"
+  },
+  {
+    "id": 20,
+    "text": "There is no greater agony than bearing an untold story inside you.",
+    "source": "I Know Why the Caged Bird Sings",
+    "author": "Maya Angelou",
+    "difficulty": "short"
+  },
+  {
+    "id": 21,
+    "text": "The only thing we have to fear is fear itself — nameless, unreasoning, unjustified terror which paralyzes needed efforts to convert retreat into advance.",
+    "source": "First Inaugural Address",
+    "author": "Franklin D. Roosevelt",
+    "difficulty": "long"
+  },
+  {
+    "id": 22,
+    "text": "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+    "source": "Self-Reliance",
+    "author": "Ralph Waldo Emerson",
+    "difficulty": "medium"
+  },
+  {
+    "id": 23,
+    "text": "A foolish consistency is the hobgoblin of little minds, adored by little statesmen and philosophers and divines.",
+    "source": "Self-Reliance",
+    "author": "Ralph Waldo Emerson",
+    "difficulty": "medium"
+  },
+  {
+    "id": 24,
+    "text": "Do I contradict myself? Very well then I contradict myself. I am large, I contain multitudes.",
+    "source": "Song of Myself",
+    "author": "Walt Whitman",
+    "difficulty": "medium"
+  },
+  {
+    "id": 25,
+    "text": "I celebrate myself, and sing myself, and what I assume you shall assume, for every atom belonging to me as good belongs to you.",
+    "source": "Song of Myself",
+    "author": "Walt Whitman",
+    "difficulty": "medium"
+  },
+  {
+    "id": 26,
+    "text": "It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better.",
+    "source": "Citizenship in a Republic",
+    "author": "Theodore Roosevelt",
+    "difficulty": "medium"
+  },
+  {
+    "id": 27,
+    "text": "The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, who comes short again and again.",
+    "source": "Citizenship in a Republic",
+    "author": "Theodore Roosevelt",
+    "difficulty": "long"
+  },
+  {
+    "id": 28,
+    "text": "All that is gold does not glitter, not all those who wander are lost; the old that is strong does not wither, deep roots are not reached by the frost.",
+    "source": "The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "difficulty": "long"
+  },
+  {
+    "id": 29,
+    "text": "In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell.",
+    "source": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "difficulty": "medium"
+  },
+  {
+    "id": 30,
+    "text": "It does not do to dwell on dreams and forget to live.",
+    "source": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "difficulty": "short"
+  },
+  {
+    "id": 31,
+    "text": "Somewhere, something incredible is waiting to be known.",
+    "source": "Cosmos",
+    "author": "Carl Sagan",
+    "difficulty": "short"
+  },
+  {
+    "id": 32,
+    "text": "The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself.",
+    "source": "Cosmos",
+    "author": "Carl Sagan",
+    "difficulty": "medium"
+  },
+  {
+    "id": 33,
+    "text": "Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives.",
+    "source": "Pale Blue Dot",
+    "author": "Carl Sagan",
+    "difficulty": "long"
+  },
+  {
+    "id": 34,
+    "text": "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science.",
+    "source": "The World As I See It",
+    "author": "Albert Einstein",
+    "difficulty": "medium"
+  },
+  {
+    "id": 35,
+    "text": "Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.",
+    "source": "Cosmic Religion",
+    "author": "Albert Einstein",
+    "difficulty": "short"
+  },
+  {
+    "id": 36,
+    "text": "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+    "source": "attributed",
+    "author": "Albert Einstein",
+    "difficulty": "short"
+  },
+  {
+    "id": 37,
+    "text": "Stay hungry, stay foolish.",
+    "source": "Stanford Commencement Address",
+    "author": "Steve Jobs",
+    "difficulty": "short"
+  },
+  {
+    "id": 38,
+    "text": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma, which is living with the results of other people's thinking.",
+    "source": "Stanford Commencement Address",
+    "author": "Steve Jobs",
+    "difficulty": "long"
+  },
+  {
+    "id": 39,
+    "text": "Here's to the crazy ones, the misfits, the rebels, the troublemakers, the round pegs in the square holes, the ones who see things differently.",
+    "source": "Think Different",
+    "author": "Apple",
+    "difficulty": "medium"
+  },
+  {
+    "id": 40,
+    "text": "The impediment to action advances action. What stands in the way becomes the way.",
+    "source": "Meditations",
+    "author": "Marcus Aurelius",
+    "difficulty": "short"
+  },
+  {
+    "id": 41,
+    "text": "You have power over your mind, not outside events. Realize this, and you will find strength.",
+    "source": "Meditations",
+    "author": "Marcus Aurelius",
+    "difficulty": "short"
+  },
+  {
+    "id": 42,
+    "text": "Waste no more time arguing about what a good man should be. Be one.",
+    "source": "Meditations",
+    "author": "Marcus Aurelius",
+    "difficulty": "short"
+  },
+  {
+    "id": 43,
+    "text": "How long are you going to wait before you demand the best for yourself and in no instance bypass the discriminations of reason?",
+    "source": "Enchiridion",
+    "author": "Epictetus",
+    "difficulty": "medium"
+  },
+  {
+    "id": 44,
+    "text": "We suffer more often in imagination than in reality.",
+    "source": "Letters from a Stoic",
+    "author": "Seneca",
+    "difficulty": "short"
+  },
+  {
+    "id": 45,
+    "text": "It is not that we have a short time to live, but that we waste a great deal of it. Life is long enough, and a sufficiently generous amount has been given to us for the highest achievements if it were all well invested.",
+    "source": "On the Shortness of Life",
+    "author": "Seneca",
+    "difficulty": "long"
+  },
+  {
+    "id": 46,
+    "text": "Luck is what happens when preparation meets opportunity.",
+    "source": "attributed",
+    "author": "Seneca",
+    "difficulty": "short"
+  },
+  {
+    "id": 47,
+    "text": "Mrs. Dalloway said she would buy the flowers herself.",
+    "source": "Mrs Dalloway",
+    "author": "Virginia Woolf",
+    "difficulty": "short"
+  },
+  {
+    "id": 48,
+    "text": "A woman must have money and a room of her own if she is to write fiction.",
+    "source": "A Room of One's Own",
+    "author": "Virginia Woolf",
+    "difficulty": "short"
+  },
+  {
+    "id": 49,
+    "text": "One need not be a chamber to be haunted; one need not be a house; the brain has corridors surpassing material place.",
+    "source": "Poem 670",
+    "author": "Emily Dickinson",
+    "difficulty": "medium"
+  },
+  {
+    "id": 50,
+    "text": "I dwell in Possibility, a fairer House than Prose, more numerous of Windows, superior for Doors.",
+    "source": "I dwell in Possibility",
+    "author": "Emily Dickinson",
+    "difficulty": "short"
+  },
+  {
+    "id": 51,
+    "text": "Had I the heavens' embroidered cloths, enwrought with golden and silver light, I would spread the cloths under your feet. But I, being poor, have only my dreams; I have spread my dreams under your feet; tread softly because you tread on my dreams.",
+    "source": "Aedh Wishes for the Cloths of Heaven",
+    "author": "W.B. Yeats",
+    "difficulty": "long"
+  },
+  {
+    "id": 52,
+    "text": "Things fall apart; the centre cannot hold; mere anarchy is loosed upon the world.",
+    "source": "The Second Coming",
+    "author": "W.B. Yeats",
+    "difficulty": "short"
+  },
+  {
+    "id": 53,
+    "text": "I have measured out my life with coffee spoons.",
+    "source": "The Love Song of J. Alfred Prufrock",
+    "author": "T.S. Eliot",
+    "difficulty": "short"
+  },
+  {
+    "id": 54,
+    "text": "This is the way the world ends. Not with a bang but a whimper.",
+    "source": "The Hollow Men",
+    "author": "T.S. Eliot",
+    "difficulty": "short"
+  },
+  {
+    "id": 55,
+    "text": "April is the cruellest month, breeding lilacs out of the dead land, mixing memory and desire, stirring dull roots with spring rain.",
+    "source": "The Waste Land",
+    "author": "T.S. Eliot",
+    "difficulty": "medium"
+  },
+  {
+    "id": 56,
+    "text": "Two roads diverged in a wood, and I took the one less traveled by, and that has made all the difference.",
+    "source": "The Road Not Taken",
+    "author": "Robert Frost",
+    "difficulty": "medium"
+  },
+  {
+    "id": 57,
+    "text": "Something there is that doesn't love a wall, that sends the frozen-ground-swell under it.",
+    "source": "Mending Wall",
+    "author": "Robert Frost",
+    "difficulty": "short"
+  },
+  {
+    "id": 58,
+    "text": "In three words I can sum up everything I've learned about life: it goes on.",
+    "source": "attributed",
+    "author": "Robert Frost",
+    "difficulty": "short"
+  },
+  {
+    "id": 59,
+    "text": "The old man was thin and gaunt with deep wrinkles in the back of his neck. The brown blotches of the benevolent skin cancer the sun brings from its reflection on the tropic sea were on his cheeks.",
+    "source": "The Old Man and the Sea",
+    "author": "Ernest Hemingway",
+    "difficulty": "long"
+  },
+  {
+    "id": 60,
+    "text": "The world breaks everyone and afterward many are strong at the broken places.",
+    "source": "A Farewell to Arms",
+    "author": "Ernest Hemingway",
+    "difficulty": "short"
+  },
+  {
+    "id": 61,
+    "text": "There is nothing to writing. All you do is sit down at a typewriter and bleed.",
+    "source": "attributed",
+    "author": "Ernest Hemingway",
+    "difficulty": "short"
+  },
+  {
+    "id": 62,
+    "text": "All we have to decide is what to do with the time that is given us.",
+    "source": "The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "difficulty": "short"
+  },
+  {
+    "id": 63,
+    "text": "I am no bird; and no net ensnares me: I am a free human being with an independent will.",
+    "source": "Jane Eyre",
+    "author": "Charlotte Bronte",
+    "difficulty": "medium"
+  },
+  {
+    "id": 64,
+    "text": "Whatever our souls are made of, his and mine are the same.",
+    "source": "Wuthering Heights",
+    "author": "Emily Bronte",
+    "difficulty": "short"
+  },
+  {
+    "id": 65,
+    "text": "People generally see what they look for, and hear what they listen for.",
+    "source": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "difficulty": "short"
+  },
+  {
+    "id": 66,
+    "text": "You never really understand a person until you consider things from his point of view — until you climb inside of his skin and walk around in it.",
+    "source": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "difficulty": "long"
+  },
+  {
+    "id": 67,
+    "text": "Real courage is when you know you're licked before you begin, but you begin anyway and see it through no matter what.",
+    "source": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "difficulty": "medium"
+  },
+  {
+    "id": 68,
+    "text": "Perhaps one did not want to be loved so much as to be understood.",
+    "source": "1984",
+    "author": "George Orwell",
+    "difficulty": "short"
+  },
+  {
+    "id": 69,
+    "text": "Freedom is the freedom to say that two plus two make four. If that is granted, all else follows.",
+    "source": "1984",
+    "author": "George Orwell",
+    "difficulty": "medium"
+  },
+  {
+    "id": 70,
+    "text": "All animals are equal, but some animals are more equal than others.",
+    "source": "Animal Farm",
+    "author": "George Orwell",
+    "difficulty": "short"
+  },
+  {
+    "id": 71,
+    "text": "The mind is its own place, and in itself can make a heaven of hell, a hell of heaven.",
+    "source": "Paradise Lost",
+    "author": "John Milton",
+    "difficulty": "medium"
+  },
+  {
+    "id": 72,
+    "text": "Midway upon the journey of our life I found myself within a forest dark, for the straightforward pathway had been lost.",
+    "source": "Inferno",
+    "author": "Dante Alighieri",
+    "difficulty": "medium"
+  },
+  {
+    "id": 73,
+    "text": "I think, therefore I am.",
+    "source": "Discourse on the Method",
+    "author": "Rene Descartes",
+    "difficulty": "short"
+  },
+  {
+    "id": 74,
+    "text": "The only true wisdom is in knowing you know nothing.",
+    "source": "attributed",
+    "author": "Socrates",
+    "difficulty": "short"
+  },
+  {
+    "id": 75,
+    "text": "Happiness is not something ready made. It comes from your own actions.",
+    "source": "attributed",
+    "author": "Dalai Lama",
+    "difficulty": "short"
+  },
+  {
+    "id": 76,
+    "text": "I have not failed. I've just found 10,000 ways that won't work.",
+    "source": "attributed",
+    "author": "Thomas Edison",
+    "difficulty": "short"
+  },
+  {
+    "id": 77,
+    "text": "If you want to build a ship, don't drum up people to collect wood and don't assign them tasks and work, but rather teach them to long for the endless immensity of the sea.",
+    "source": "The Wisdom of the Sands",
+    "author": "Antoine de Saint-Exupery",
+    "difficulty": "long"
+  },
+  {
+    "id": 78,
+    "text": "What is essential is invisible to the eye.",
+    "source": "The Little Prince",
+    "author": "Antoine de Saint-Exupery",
+    "difficulty": "short"
+  },
+  {
+    "id": 79,
+    "text": "Grown-ups never understand anything by themselves, and it is tiresome for children to be always and forever explaining things to them.",
+    "source": "The Little Prince",
+    "author": "Antoine de Saint-Exupery",
+    "difficulty": "medium"
+  },
+  {
+    "id": 80,
+    "text": "One must imagine Sisyphus happy.",
+    "source": "The Myth of Sisyphus",
+    "author": "Albert Camus",
+    "difficulty": "short"
+  },
+  {
+    "id": 81,
+    "text": "The struggle itself towards the heights is enough to fill a man's heart. One must imagine Sisyphus happy.",
+    "source": "The Myth of Sisyphus",
+    "author": "Albert Camus",
+    "difficulty": "medium"
+  },
+  {
+    "id": 82,
+    "text": "In the middle of difficulty lies opportunity.",
+    "source": "attributed",
+    "author": "Albert Einstein",
+    "difficulty": "short"
+  },
+  {
+    "id": 83,
+    "text": "Not everything that is faced can be changed, but nothing can be changed until it is faced.",
+    "source": "attributed",
+    "author": "James Baldwin",
+    "difficulty": "short"
+  },
+  {
+    "id": 84,
+    "text": "I am invisible, understand, simply because people refuse to see me. Like the bodiless heads you see sometimes in circus sideshows, it is as though I have been surrounded by mirrors of hard, distorting glass.",
+    "source": "Invisible Man",
+    "author": "Ralph Ellison",
+    "difficulty": "long"
+  },
+  {
+    "id": 85,
+    "text": "When you reach the end of your rope, tie a knot in it and hang on.",
+    "source": "attributed",
+    "author": "Abraham Lincoln",
+    "difficulty": "short"
+  },
+  {
+    "id": 86,
+    "text": "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.",
+    "source": "Gettysburg Address",
+    "author": "Abraham Lincoln",
+    "difficulty": "long"
+  },
+  {
+    "id": 87,
+    "text": "Ask not what your country can do for you — ask what you can do for your country.",
+    "source": "Inaugural Address",
+    "author": "John F. Kennedy",
+    "difficulty": "short"
+  },
+  {
+    "id": 88,
+    "text": "I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.",
+    "source": "I Have a Dream",
+    "author": "Martin Luther King Jr.",
+    "difficulty": "long"
+  },
+  {
+    "id": 89,
+    "text": "Injustice anywhere is a threat to justice everywhere. We are caught in an inescapable network of mutuality, tied in a single garment of destiny.",
+    "source": "Letter from Birmingham Jail",
+    "author": "Martin Luther King Jr.",
+    "difficulty": "long"
+  },
+  {
+    "id": 90,
+    "text": "The arc of the moral universe is long, but it bends toward justice.",
+    "source": "attributed",
+    "author": "Martin Luther King Jr.",
+    "difficulty": "short"
+  },
+  {
+    "id": 91,
+    "text": "If you tell the truth, you don't have to remember anything.",
+    "source": "Notebook",
+    "author": "Mark Twain",
+    "difficulty": "short"
+  },
+  {
+    "id": 92,
+    "text": "Whenever you find yourself on the side of the majority, it is time to pause and reflect.",
+    "source": "Notebook",
+    "author": "Mark Twain",
+    "difficulty": "medium"
+  },
+  {
+    "id": 93,
+    "text": "The man who does not read has no advantage over the man who cannot read.",
+    "source": "attributed",
+    "author": "Mark Twain",
+    "difficulty": "short"
+  },
+  {
+    "id": 94,
+    "text": "It is our choices, Harry, that show what we truly are, far more than our abilities.",
+    "source": "Harry Potter and the Chamber of Secrets",
+    "author": "J.K. Rowling",
+    "difficulty": "short"
+  },
+  {
+    "id": 95,
+    "text": "In my beginning is my end. In succession houses rise and fall, crumble, are extended, are removed, destroyed, restored.",
+    "source": "East Coker",
+    "author": "T.S. Eliot",
+    "difficulty": "medium"
+  },
+  {
+    "id": 96,
+    "text": "We shall not cease from exploration, and the end of all our exploring will be to arrive where we started and know the place for the first time.",
+    "source": "Little Gidding",
+    "author": "T.S. Eliot",
+    "difficulty": "medium"
+  },
+  {
+    "id": 97,
+    "text": "I learned that courage was not the absence of fear, but the triumph over it. The brave man is not he who does not feel afraid, but he who conquers that fear.",
+    "source": "Long Walk to Freedom",
+    "author": "Nelson Mandela",
+    "difficulty": "long"
+  },
+  {
+    "id": 98,
+    "text": "Education is the most powerful weapon which you can use to change the world.",
+    "source": "attributed",
+    "author": "Nelson Mandela",
+    "difficulty": "short"
+  },
+  {
+    "id": 99,
+    "text": "The best time to plant a tree was twenty years ago. The second best time is now.",
+    "source": "Proverb",
+    "author": "Chinese Proverb",
+    "difficulty": "short"
+  },
+  {
+    "id": 100,
+    "text": "You must be the change you wish to see in the world.",
+    "source": "attributed",
+    "author": "Mahatma Gandhi",
+    "difficulty": "short"
+  }
+]

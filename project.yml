@@ -1,0 +1,68 @@
+name: TypeRacer
+options:
+  bundleIdPrefix: com.typeracer
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+
+packages:
+  FirebaseSDK:
+    url: https://github.com/firebase/firebase-ios-sdk.git
+    from: "11.0.0"
+
+targets:
+  TypeRacer:
+    type: application
+    platform: iOS
+    sources:
+      - path: TypeRacer
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.fuzzaslam.typeracer
+        INFOPLIST_FILE: TypeRacer/Info.plist
+        CODE_SIGN_ENTITLEMENTS: TypeRacer/TypeRacer.entitlements
+    dependencies:
+      - target: TypeRacerMessages
+      - package: FirebaseSDK
+        product: FirebaseDatabase
+    entitlements:
+      path: TypeRacer/TypeRacer.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.typeracer.shared
+
+  TypeRacerMessages:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: TypeRacerMessages
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.fuzzaslam.typeracer.messages
+        INFOPLIST_FILE: TypeRacerMessages/Info.plist
+        CODE_SIGN_ENTITLEMENTS: TypeRacerMessages/TypeRacerMessages.entitlements
+        PRODUCT_NAME: TypeRacerMessages
+    dependencies:
+      - package: FirebaseSDK
+        product: FirebaseDatabase
+    entitlements:
+      path: TypeRacerMessages/TypeRacerMessages.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.typeracer.shared
+
+schemes:
+  TypeRacer:
+    build:
+      targets:
+        TypeRacer: all
+        TypeRacerMessages: all
+    run:
+      config: Debug

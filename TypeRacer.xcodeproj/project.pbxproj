@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05B76AAD5AC2B2F42B96109F /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA247C12123B489E72D17 /* MessagesViewController.swift */; };
+		1EB78D9488866DCEA7888045 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 64B2DD8ED18CA787399BCB4B /* quotes.json */; };
+		1EFDFA7AAF9EB87AEB785386 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 56D129D1BCC13558C5539090 /* FirebaseDatabase */; };
+		271E4D19BEFEEDB71B3A6CE7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B72C5CA2F2B680D8477617E1 /* FirebaseDatabase */; };
+		316EA4F075821F7A03F3772B /* TypeRacerMessages.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C93374391A4211697B3EFB96 /* TypeRacerMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		431429995F586A92502466C4 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26358E5BAC2B70BD8B0B2AAB /* GameState.swift */; };
+		742B84CF997A689817FC583C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C20555738D455E1D75FE6FCB /* GoogleService-Info.plist */; };
+		7E1D2DF50FE77AE151B6A634 /* String+TypeRacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573D427892A3B314E1EE079 /* String+TypeRacer.swift */; };
+		83960949BADF267FFFAA88FF /* FirebaseRaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99132E0158DB4AD6D076A075 /* FirebaseRaceService.swift */; };
+		8A0AE5097AA944187CCF8D74 /* String+TypeRacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573D427892A3B314E1EE079 /* String+TypeRacer.swift */; };
+		8BF594540D6AB3E7176A9101 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 64B2DD8ED18CA787399BCB4B /* quotes.json */; };
+		8D481957E9F93B8564F474A7 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D379460E9E124F8EB8481CD /* Race.swift */; };
+		A870F36F3A6D4868ECB238E8 /* MessageURLCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69FFAFA0E950535746672D /* MessageURLCoder.swift */; };
+		B1DAEB58C5310FCA0B47E64E /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EB19960285FAF3F107548 /* RaceView.swift */; };
+		B486C9AEE56C28DA1BAFAEF1 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675FA7AEBC975849292C97EA /* ResultsView.swift */; };
+		B58BED1F339BB49879B746C5 /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701681EC2EE84487C13411C8 /* LobbyView.swift */; };
+		B6129C76C5F6066EE1E1EB42 /* SentenceDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD89E53735A2F9BE06E5CB /* SentenceDisplay.swift */; };
+		B918FAC22DD5D49490AD4DDD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90BBCABA4B2C5BB0EC90017 /* HomeView.swift */; };
+		B9302CC8EB3D1BC2FB3B61F3 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D379460E9E124F8EB8481CD /* Race.swift */; };
+		BA497BF019EBDABC29E8A5FC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A43FD1D8E12D154A3E6A32C /* SettingsView.swift */; };
+		C2CCB034F06C2B211B6A92BD /* CompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F8D7D037BF0B8D048677D3 /* CompactView.swift */; };
+		C659FF465176CC8C0320DF14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BED4F7FAAC8E4373D68DE78 /* GoogleService-Info.plist */; };
+		CE93C38811BDBB380C4607F2 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEA24A18D38E34208091320 /* Player.swift */; };
+		D249DD62CC297524A3EC7159 /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA66926A64428975DA1B7A /* QuoteService.swift */; };
+		DE7A92575A140391362F2640 /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA66926A64428975DA1B7A /* QuoteService.swift */; };
+		E6EEE2CAA575419507C5C95B /* SentenceDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD89E53735A2F9BE06E5CB /* SentenceDisplay.swift */; };
+		EB4246FD73C3632611BEE14D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEA24A18D38E34208091320 /* Player.swift */; };
+		F5DD5866A90986D78E020049 /* TypeRacerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3782EC65FDC3BD79A166CB /* TypeRacerApp.swift */; };
+		F84D3DA6F9CE5383FFD362F7 /* FirebaseRaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99132E0158DB4AD6D076A075 /* FirebaseRaceService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C29480C001E75F09CFC81BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC2E7C137AF7331C6C011624 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E98548C4771B0B205FE64C;
+			remoteInfo = TypeRacerMessages;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		20821E32AF59F704B2CE8B16 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				316EA4F075821F7A03F3772B /* TypeRacerMessages.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00DD89E53735A2F9BE06E5CB /* SentenceDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceDisplay.swift; sourceTree = "<group>"; };
+		0573D427892A3B314E1EE079 /* String+TypeRacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TypeRacer.swift"; sourceTree = "<group>"; };
+		0CEA24A18D38E34208091320 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		0D379460E9E124F8EB8481CD /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		16F8F3BE489F59763DF88556 /* TypeRacer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeRacer.entitlements; sourceTree = "<group>"; };
+		1BED4F7FAAC8E4373D68DE78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		21A5A128939BA62078A11CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		26358E5BAC2B70BD8B0B2AAB /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		2D8FA247C12123B489E72D17 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		362ADB83ADC674369E3F45A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3F2EB19960285FAF3F107548 /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
+		64B2DD8ED18CA787399BCB4B /* quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		675FA7AEBC975849292C97EA /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		701681EC2EE84487C13411C8 /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
+		76C227D9925910FD4068EFCD /* TypeRacerMessages.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeRacerMessages.entitlements; sourceTree = "<group>"; };
+		7BAA66926A64428975DA1B7A /* QuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteService.swift; sourceTree = "<group>"; };
+		87E2213359C2016C31196F3B /* TypeRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A43FD1D8E12D154A3E6A32C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		99132E0158DB4AD6D076A075 /* FirebaseRaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRaceService.swift; sourceTree = "<group>"; };
+		BA69FFAFA0E950535746672D /* MessageURLCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageURLCoder.swift; sourceTree = "<group>"; };
+		C20555738D455E1D75FE6FCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C93374391A4211697B3EFB96 /* TypeRacerMessages.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TypeRacerMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF3782EC65FDC3BD79A166CB /* TypeRacerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRacerApp.swift; sourceTree = "<group>"; };
+		E90BBCABA4B2C5BB0EC90017 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F3F8D7D037BF0B8D048677D3 /* CompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53D20EDDFCE228D7CF71E4F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EFDFA7AAF9EB87AEB785386 /* FirebaseDatabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73DFED2469DE14E8CCDBC8B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				271E4D19BEFEEDB71B3A6CE7 /* FirebaseDatabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01BE91FA0076EC0946DA0831 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3F8D7D037BF0B8D048677D3 /* CompactView.swift */,
+				701681EC2EE84487C13411C8 /* LobbyView.swift */,
+				3F2EB19960285FAF3F107548 /* RaceView.swift */,
+				675FA7AEBC975849292C97EA /* ResultsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		148284E287134F156E8DC599 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0CEA24A18D38E34208091320 /* Player.swift */,
+				0D379460E9E124F8EB8481CD /* Race.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A070F3C1BB5ACC0EF5B530B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87E2213359C2016C31196F3B /* TypeRacer.app */,
+				C93374391A4211697B3EFB96 /* TypeRacerMessages.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28D973148661EE364A53B19D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00DD89E53735A2F9BE06E5CB /* SentenceDisplay.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3B7338A4CD3A3F5529092A76 /* TypeRacerMessages */ = {
+			isa = PBXGroup;
+			children = (
+				26358E5BAC2B70BD8B0B2AAB /* GameState.swift */,
+				C20555738D455E1D75FE6FCB /* GoogleService-Info.plist */,
+				21A5A128939BA62078A11CB1 /* Info.plist */,
+				2D8FA247C12123B489E72D17 /* MessagesViewController.swift */,
+				BA69FFAFA0E950535746672D /* MessageURLCoder.swift */,
+				76C227D9925910FD4068EFCD /* TypeRacerMessages.entitlements */,
+				01BE91FA0076EC0946DA0831 /* Views */,
+			);
+			path = TypeRacerMessages;
+			sourceTree = "<group>";
+		};
+		50372499A585DD7D1C7EE706 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				99132E0158DB4AD6D076A075 /* FirebaseRaceService.swift */,
+				7BAA66926A64428975DA1B7A /* QuoteService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		509F057747997913B571E654 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64B2DD8ED18CA787399BCB4B /* quotes.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		617E416581B73D6A8804AAF6 /* TypeRacer */ = {
+			isa = PBXGroup;
+			children = (
+				1BED4F7FAAC8E4373D68DE78 /* GoogleService-Info.plist */,
+				362ADB83ADC674369E3F45A8 /* Info.plist */,
+				16F8F3BE489F59763DF88556 /* TypeRacer.entitlements */,
+				DF3782EC65FDC3BD79A166CB /* TypeRacerApp.swift */,
+				DFCB8743EB3F8D70024131DC /* Views */,
+			);
+			path = TypeRacer;
+			sourceTree = "<group>";
+		};
+		65367FCD157D861A0A30F4B5 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C52CEA2DBFED80CD88684F09 /* Extensions */,
+				148284E287134F156E8DC599 /* Models */,
+				509F057747997913B571E654 /* Resources */,
+				50372499A585DD7D1C7EE706 /* Services */,
+				28D973148661EE364A53B19D /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C52CEA2DBFED80CD88684F09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0573D427892A3B314E1EE079 /* String+TypeRacer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DFCB8743EB3F8D70024131DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E90BBCABA4B2C5BB0EC90017 /* HomeView.swift */,
+				8A43FD1D8E12D154A3E6A32C /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F2B1795BA6BD1D568D7D01A5 = {
+			isa = PBXGroup;
+			children = (
+				65367FCD157D861A0A30F4B5 /* Shared */,
+				617E416581B73D6A8804AAF6 /* TypeRacer */,
+				3B7338A4CD3A3F5529092A76 /* TypeRacerMessages */,
+				1A070F3C1BB5ACC0EF5B530B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D955A4B66BA04CD02AC1DF8 /* TypeRacer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0D129E916B8C8F83733DDC1 /* Build configuration list for PBXNativeTarget "TypeRacer" */;
+			buildPhases = (
+				D7D377BE289068702DFC3A79 /* Sources */,
+				61B88F4F25CA44D3A407D01D /* Resources */,
+				53D20EDDFCE228D7CF71E4F5 /* Frameworks */,
+				20821E32AF59F704B2CE8B16 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				044207F4134EE9C653828C94 /* PBXTargetDependency */,
+			);
+			name = TypeRacer;
+			packageProductDependencies = (
+				56D129D1BCC13558C5539090 /* FirebaseDatabase */,
+			);
+			productName = TypeRacer;
+			productReference = 87E2213359C2016C31196F3B /* TypeRacer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B7E98548C4771B0B205FE64C /* TypeRacerMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F72B98E7D3BDB378050DE03D /* Build configuration list for PBXNativeTarget "TypeRacerMessages" */;
+			buildPhases = (
+				CCD1C175C70FD6C041B51644 /* Sources */,
+				492840C6A0F64C630B74A0A0 /* Resources */,
+				73DFED2469DE14E8CCDBC8B2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TypeRacerMessages;
+			packageProductDependencies = (
+				B72C5CA2F2B680D8477617E1 /* FirebaseDatabase */,
+			);
+			productName = TypeRacerMessages;
+			productReference = C93374391A4211697B3EFB96 /* TypeRacerMessages.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC2E7C137AF7331C6C011624 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 1F1A00521D028B6E5A243D93 /* Build configuration list for PBXProject "TypeRacer" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F2B1795BA6BD1D568D7D01A5;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				906521F90C263E753DAA1ED0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1A070F3C1BB5ACC0EF5B530B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D955A4B66BA04CD02AC1DF8 /* TypeRacer */,
+				B7E98548C4771B0B205FE64C /* TypeRacerMessages */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		492840C6A0F64C630B74A0A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				742B84CF997A689817FC583C /* GoogleService-Info.plist in Resources */,
+				8BF594540D6AB3E7176A9101 /* quotes.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61B88F4F25CA44D3A407D01D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C659FF465176CC8C0320DF14 /* GoogleService-Info.plist in Resources */,
+				1EB78D9488866DCEA7888045 /* quotes.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCD1C175C70FD6C041B51644 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2CCB034F06C2B211B6A92BD /* CompactView.swift in Sources */,
+				83960949BADF267FFFAA88FF /* FirebaseRaceService.swift in Sources */,
+				431429995F586A92502466C4 /* GameState.swift in Sources */,
+				B58BED1F339BB49879B746C5 /* LobbyView.swift in Sources */,
+				A870F36F3A6D4868ECB238E8 /* MessageURLCoder.swift in Sources */,
+				05B76AAD5AC2B2F42B96109F /* MessagesViewController.swift in Sources */,
+				CE93C38811BDBB380C4607F2 /* Player.swift in Sources */,
+				D249DD62CC297524A3EC7159 /* QuoteService.swift in Sources */,
+				8D481957E9F93B8564F474A7 /* Race.swift in Sources */,
+				B1DAEB58C5310FCA0B47E64E /* RaceView.swift in Sources */,
+				B486C9AEE56C28DA1BAFAEF1 /* ResultsView.swift in Sources */,
+				B6129C76C5F6066EE1E1EB42 /* SentenceDisplay.swift in Sources */,
+				8A0AE5097AA944187CCF8D74 /* String+TypeRacer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D377BE289068702DFC3A79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84D3DA6F9CE5383FFD362F7 /* FirebaseRaceService.swift in Sources */,
+				B918FAC22DD5D49490AD4DDD /* HomeView.swift in Sources */,
+				EB4246FD73C3632611BEE14D /* Player.swift in Sources */,
+				DE7A92575A140391362F2640 /* QuoteService.swift in Sources */,
+				B9302CC8EB3D1BC2FB3B61F3 /* Race.swift in Sources */,
+				E6EEE2CAA575419507C5C95B /* SentenceDisplay.swift in Sources */,
+				BA497BF019EBDABC29E8A5FC /* SettingsView.swift in Sources */,
+				7E1D2DF50FE77AE151B6A634 /* String+TypeRacer.swift in Sources */,
+				F5DD5866A90986D78E020049 /* TypeRacerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		044207F4134EE9C653828C94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E98548C4771B0B205FE64C /* TypeRacerMessages */;
+			targetProxy = 0C29480C001E75F09CFC81BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C3A4D42A7ADE0A05C2D5798 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TypeRacerMessages/TypeRacerMessages.entitlements;
+				DEVELOPMENT_TEAM = XUG77CV48T;
+				INFOPLIST_FILE = TypeRacerMessages/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fuzzaslam.typeracer.messages;
+				PRODUCT_NAME = TypeRacerMessages;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17AEF49A3425AC68B9295606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TypeRacer/TypeRacer.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = XUG77CV48T;
+				INFOPLIST_FILE = TypeRacer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fuzzaslam.typeracer;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2E5B68207222EAC73D79C84E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		A9F03649F40E5532ADFA329D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		C76D0BF3D11C1D58ABBBE146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TypeRacer/TypeRacer.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = XUG77CV48T;
+				INFOPLIST_FILE = TypeRacer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fuzzaslam.typeracer;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C8152BB9803121DB1E7A2628 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TypeRacerMessages/TypeRacerMessages.entitlements;
+				DEVELOPMENT_TEAM = XUG77CV48T;
+				INFOPLIST_FILE = TypeRacerMessages/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fuzzaslam.typeracer.messages;
+				PRODUCT_NAME = TypeRacerMessages;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F1A00521D028B6E5A243D93 /* Build configuration list for PBXProject "TypeRacer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9F03649F40E5532ADFA329D /* Debug */,
+				2E5B68207222EAC73D79C84E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E0D129E916B8C8F83733DDC1 /* Build configuration list for PBXNativeTarget "TypeRacer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C76D0BF3D11C1D58ABBBE146 /* Debug */,
+				17AEF49A3425AC68B9295606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F72B98E7D3BDB378050DE03D /* Build configuration list for PBXNativeTarget "TypeRacerMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C3A4D42A7ADE0A05C2D5798 /* Debug */,
+				C8152BB9803121DB1E7A2628 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		906521F90C263E753DAA1ED0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		56D129D1BCC13558C5539090 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 906521F90C263E753DAA1ED0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		B72C5CA2F2B680D8477617E1 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 906521F90C263E753DAA1ED0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FC2E7C137AF7331C6C011624 /* Project object */;
+}
