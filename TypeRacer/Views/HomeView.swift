@@ -49,6 +49,13 @@ struct HomeView: View {
                 .padding(.bottom, 40)
             }
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: SettingsView()) {
+                        Image(systemName: "gearshape")
+                    }
+                }
+            }
         }
     }
 }
