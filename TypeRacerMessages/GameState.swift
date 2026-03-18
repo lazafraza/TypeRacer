@@ -152,6 +152,7 @@ final class GameState: ObservableObject {
                     }
                 case .finished:
                     self.progressTimer?.invalidate()
+                    self.progressTimer = nil
                     self.phase = .finished
                 default:
                     break
@@ -164,6 +165,11 @@ final class GameState: ObservableObject {
 
     func cleanup() {
         progressTimer?.invalidate()
+        progressTimer = nil
         raceService.stopObserving()
+    }
+
+    deinit {
+        progressTimer?.invalidate()
     }
 }

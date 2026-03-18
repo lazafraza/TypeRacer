@@ -105,6 +105,7 @@ class MessagesViewController: MSMessagesAppViewController {
 
     override func didResignActive(with conversation: MSConversation) {
         super.didResignActive(with: conversation)
+        gameState.cleanup()
     }
 }
 

@@ -64,6 +64,7 @@ struct PracticeView: View {
     @State private var isFinished = false
     @State private var timer: Timer?
     @FocusState private var isInputFocused: Bool
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         VStack(spacing: 16) {
@@ -120,7 +121,16 @@ struct PracticeView: View {
             }
         }
         .navigationTitle("Practice")
-        .onDisappear { timer?.invalidate() }
+        .onDisappear {
+            timer?.invalidate()
+            timer = nil
+        }
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase != .active {
+                timer?.invalidate()
+                timer = nil
+            }
+        }
     }
 
     private func onTypingChanged(_ text: String) {
@@ -138,11 +148,14 @@ struct PracticeView: View {
 
         if text.typingProgress(against: quote.text) >= 1.0 {
             timer?.invalidate()
+            timer = nil
             isFinished = true
         }
     }
 
     private func resetPractice() {
+        timer?.invalidate()
+        timer = nil
         quote = QuoteService.shared.randomQuote(difficulty: .medium)
         typedText = ""
         startTime = nil
