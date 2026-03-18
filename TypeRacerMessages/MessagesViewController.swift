@@ -12,6 +12,7 @@ class MessagesViewController: MSMessagesAppViewController {
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
         }
+        RaceService.shared.cleanupExpiredRaces()
         gameState = GameState()
     }
 
