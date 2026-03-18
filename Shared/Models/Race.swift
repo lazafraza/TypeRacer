@@ -17,6 +17,7 @@ struct Race: Codable, Identifiable {
     var createdAt: Double
     var countdownStartAt: Double?
     var raceStartAt: Double?
+    var expiresAt: Double?
 
     init(id: String = UUID().uuidString,
          sentence: String,
@@ -24,7 +25,8 @@ struct Race: Codable, Identifiable {
          quoteSource: String = "",
          status: RaceStatus = .waiting,
          players: [String: Player] = [:],
-         createdAt: Double = Date().timeIntervalSince1970) {
+         createdAt: Double = Date().timeIntervalSince1970,
+         expiresAt: Double = Date().timeIntervalSince1970 + 24 * 60 * 60) {
         self.id = id
         self.sentence = sentence
         self.quoteAuthor = quoteAuthor
@@ -32,6 +34,7 @@ struct Race: Codable, Identifiable {
         self.status = status
         self.players = players
         self.createdAt = createdAt
+        self.expiresAt = expiresAt
     }
 
     var sortedPlayers: [Player] {

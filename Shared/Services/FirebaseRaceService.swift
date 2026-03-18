@@ -55,8 +55,10 @@ final class RaceService: ObservableObject {
     }
 
     func finishRace(raceId: String) {
+        let expiresAt = Date().timeIntervalSince1970 + (1 * 60 * 60)
         db.child("races").child(raceId).updateChildValues([
             "status": RaceStatus.finished.rawValue,
+            "expiresAt": expiresAt,
         ])
     }
 
@@ -102,6 +104,27 @@ final class RaceService: ObservableObject {
         }
         raceHandle = nil
         raceRef = nil
+    }
+
+    // MARK: - Cleanup
+
+    func cleanupExpiredRaces() {
+        let now = Date().timeIntervalSince1970
+        let racesRef = db.child("races")
+        racesRef.queryOrdered(byChild: "expiresAt")
+            .queryEnding(atValue: now)
+            .observeSingleEvent(of: .value) { snapshot in
+                for child in snapshot.children {
+                    guard let childSnapshot = child as? DataSnapshot,
+                          let dict = childSnapshot.value as? [String: Any],
+                          let statusRaw = dict["status"] as? String,
+                          let status = RaceStatus(rawValue: statusRaw),
+                          status == .finished else {
+                        continue
+                    }
+                    childSnapshot.ref.removeValue()
+                }
+            }
     }
 
     // MARK: - Fetch Once
