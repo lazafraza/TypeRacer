@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		05B76AAD5AC2B2F42B96109F /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA247C12123B489E72D17 /* MessagesViewController.swift */; };
+		18CC550E204F194D4F5FEB0B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7E3563DAA9C29892F9B57BEF /* FirebaseAuth */; };
 		1EB78D9488866DCEA7888045 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 64B2DD8ED18CA787399BCB4B /* quotes.json */; };
 		1EFDFA7AAF9EB87AEB785386 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 56D129D1BCC13558C5539090 /* FirebaseDatabase */; };
 		271E4D19BEFEEDB71B3A6CE7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B72C5CA2F2B680D8477617E1 /* FirebaseDatabase */; };
 		316EA4F075821F7A03F3772B /* TypeRacerMessages.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C93374391A4211697B3EFB96 /* TypeRacerMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		431429995F586A92502466C4 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26358E5BAC2B70BD8B0B2AAB /* GameState.swift */; };
+		6A4036DE528B9449CDD4DE9E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6892D3647D6CE588424F10D1 /* FirebaseAuth */; };
 		742B84CF997A689817FC583C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C20555738D455E1D75FE6FCB /* GoogleService-Info.plist */; };
 		7E1D2DF50FE77AE151B6A634 /* String+TypeRacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573D427892A3B314E1EE079 /* String+TypeRacer.swift */; };
 		83960949BADF267FFFAA88FF /* FirebaseRaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99132E0158DB4AD6D076A075 /* FirebaseRaceService.swift */; };
@@ -79,12 +81,12 @@
 		701681EC2EE84487C13411C8 /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyView.swift; sourceTree = "<group>"; };
 		76C227D9925910FD4068EFCD /* TypeRacerMessages.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeRacerMessages.entitlements; sourceTree = "<group>"; };
 		7BAA66926A64428975DA1B7A /* QuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteService.swift; sourceTree = "<group>"; };
-		87E2213359C2016C31196F3B /* TypeRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87E2213359C2016C31196F3B /* TypeRacer.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = TypeRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A43FD1D8E12D154A3E6A32C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		99132E0158DB4AD6D076A075 /* FirebaseRaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRaceService.swift; sourceTree = "<group>"; };
 		BA69FFAFA0E950535746672D /* MessageURLCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageURLCoder.swift; sourceTree = "<group>"; };
 		C20555738D455E1D75FE6FCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C93374391A4211697B3EFB96 /* TypeRacerMessages.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TypeRacerMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C93374391A4211697B3EFB96 /* TypeRacerMessages.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = TypeRacerMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF3782EC65FDC3BD79A166CB /* TypeRacerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRacerApp.swift; sourceTree = "<group>"; };
 		E90BBCABA4B2C5BB0EC90017 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F3F8D7D037BF0B8D048677D3 /* CompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EFDFA7AAF9EB87AEB785386 /* FirebaseDatabase in Frameworks */,
+				6A4036DE528B9449CDD4DE9E /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				271E4D19BEFEEDB71B3A6CE7 /* FirebaseDatabase in Frameworks */,
+				18CC550E204F194D4F5FEB0B /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +253,7 @@
 			name = TypeRacer;
 			packageProductDependencies = (
 				56D129D1BCC13558C5539090 /* FirebaseDatabase */,
+				6892D3647D6CE588424F10D1 /* FirebaseAuth */,
 			);
 			productName = TypeRacer;
 			productReference = 87E2213359C2016C31196F3B /* TypeRacer.app */;
@@ -269,10 +274,11 @@
 			name = TypeRacerMessages;
 			packageProductDependencies = (
 				B72C5CA2F2B680D8477617E1 /* FirebaseDatabase */,
+				7E3563DAA9C29892F9B57BEF /* FirebaseAuth */,
 			);
 			productName = TypeRacerMessages;
 			productReference = C93374391A4211697B3EFB96 /* TypeRacerMessages.appex */;
-			productType = "com.apple.product-type.app-extension.messages";
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -282,6 +288,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 1F1A00521D028B6E5A243D93 /* Build configuration list for PBXProject "TypeRacer" */;
 			developmentRegion = en;
@@ -379,7 +387,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TypeRacerMessages/TypeRacerMessages.entitlements;
-				DEVELOPMENT_TEAM = XUG77CV48T;
 				INFOPLIST_FILE = TypeRacerMessages/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -399,7 +406,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TypeRacer/TypeRacer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = XUG77CV48T;
 				INFOPLIST_FILE = TypeRacer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -536,7 +542,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TypeRacer/TypeRacer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = XUG77CV48T;
 				INFOPLIST_FILE = TypeRacer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -552,7 +557,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TypeRacerMessages/TypeRacerMessages.entitlements;
-				DEVELOPMENT_TEAM = XUG77CV48T;
 				INFOPLIST_FILE = TypeRacerMessages/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -614,6 +618,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 906521F90C263E753DAA1ED0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		6892D3647D6CE588424F10D1 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 906521F90C263E753DAA1ED0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		7E3563DAA9C29892F9B57BEF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 906521F90C263E753DAA1ED0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 		B72C5CA2F2B680D8477617E1 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;

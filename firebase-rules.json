@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "races": {
+      "$raceId": {
+        ".read": "auth != null",
+        "players": {
+          "$playerId": {
+            ".write": "auth != null && auth.uid == $playerId"
+          }
+        },
+        "status": {
+          ".write": "auth != null"
+        },
+        "countdownStartAt": {
+          ".write": "auth != null"
+        },
+        "raceStartAt": {
+          ".write": "auth != null"
+        },
+        ".write": "auth != null && !data.exists()"
+      }
+    }
+  }
+}
