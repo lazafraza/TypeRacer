@@ -1,4 +1,5 @@
 import Foundation
+import FirebaseAuth
 import FirebaseDatabase
 
 final class RaceService: ObservableObject {
@@ -9,6 +10,11 @@ final class RaceService: ObservableObject {
     private var raceHandle: DatabaseHandle?
 
     @Published var currentRace: Race?
+
+    /// Returns the Firebase Auth UID if signed in, otherwise nil.
+    var authUID: String? {
+        Auth.auth().currentUser?.uid
+    }
 
     private init() {}
 

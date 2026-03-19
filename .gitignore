@@ -29,3 +29,6 @@ Pods/
 *.swp
 *~
 .DS_Store
+
+# Firebase config (contains API keys)
+GoogleService-Info.plist

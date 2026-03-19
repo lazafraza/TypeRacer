@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import FirebaseAuth
 
 enum GamePhase {
     case compact
@@ -25,7 +26,12 @@ final class GameState: ObservableObject {
     private var lastPushTime: Date = .distantPast
 
     init() {
-        if let stored = UserDefaults(suiteName: "group.com.typeracer.shared")?.string(forKey: "playerId") {
+        // Prefer Firebase Auth UID so security rules can validate the writing user.
+        // Fall back to a locally persisted UUID if auth hasn't completed yet.
+        if let uid = Auth.auth().currentUser?.uid {
+            localPlayerId = uid
+            UserDefaults(suiteName: "group.com.typeracer.shared")?.set(uid, forKey: "playerId")
+        } else if let stored = UserDefaults(suiteName: "group.com.typeracer.shared")?.string(forKey: "playerId") {
             localPlayerId = stored
         } else {
             let newId = UUID().uuidString
@@ -33,6 +39,15 @@ final class GameState: ObservableObject {
             localPlayerId = newId
         }
         localNickname = UserDefaults(suiteName: "group.com.typeracer.shared")?.string(forKey: "nickname") ?? "Player"
+
+        // Listen for auth state changes and update the player ID when signed in.
+        _ = Auth.auth().addStateDidChangeListener { [weak self] _, user in
+            guard let self, let uid = user?.uid else { return }
+            Task { @MainActor in
+                self.localPlayerId = uid
+                UserDefaults(suiteName: "group.com.typeracer.shared")?.set(uid, forKey: "playerId")
+            }
+        }
     }
 
     func saveNickname(_ name: String) {

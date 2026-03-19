@@ -2,6 +2,7 @@ import UIKit
 import Messages
 import SwiftUI
 import FirebaseCore
+import FirebaseAuth
 
 class MessagesViewController: MSMessagesAppViewController {
 
@@ -11,6 +12,11 @@ class MessagesViewController: MSMessagesAppViewController {
         super.viewDidLoad()
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
+        }
+        Auth.auth().signInAnonymously { result, error in
+            if let error {
+                print("Anonymous auth failed: \(error.localizedDescription)")
+            }
         }
         gameState = GameState()
     }
