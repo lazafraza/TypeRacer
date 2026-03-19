@@ -119,19 +119,21 @@ final class GameState: ObservableObject {
         }
 
         if progress >= 1.0 {
-            finishRace()
+            Task {
+                await finishRace()
+            }
         }
     }
 
-    private func finishRace() {
+    private func finishRace() async {
         progressTimer?.invalidate()
         progressTimer = nil
 
         guard let raceId = race?.id else { return }
         raceService.markPlayerFinished(raceId: raceId, playerId: localPlayerId, wpm: wpm)
 
-        // In local mode, finishing the only player ends the race
-        if let race = raceService.fetchRace(raceId: raceId),
+        // Fetch fresh race state from Firebase to check if all players are done
+        if let race = await raceService.fetchRace(raceId: raceId),
            race.players.values.allSatisfy({ $0.hasFinished }) {
             raceService.finishRace(raceId: raceId)
         }
