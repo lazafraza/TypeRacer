@@ -13,63 +13,81 @@ struct RaceView: View {
     }
 
     var body: some View {
-        VStack(spacing: 16) {
-            // Timer + WPM header
-            HStack {
-                Label(formatTime(gameState.elapsedSeconds), systemImage: "timer")
-                    .font(.headline.monospacedDigit())
-                Spacer()
-                Label("\(gameState.wpm) WPM", systemImage: "bolt.fill")
-                    .font(.headline.monospacedDigit())
-                    .foregroundStyle(.orange)
-            }
-            .padding(.horizontal)
-            .padding(.top, 8)
-
-            // Quote attribution
-            if let race = gameState.race {
-                Text("— \(race.quoteAuthor), \(race.quoteSource)")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.horizontal)
+        VStack(spacing: 0) {
+            // Offline banner
+            if !gameState.isConnected {
+                HStack(spacing: 6) {
+                    Image(systemName: "wifi.slash")
+                    Text("Connection lost — reconnecting...")
+                }
+                .font(.caption.bold())
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .padding(8)
+                .background(Color.red)
             }
 
-            // Target sentence with character highlighting
-            SentenceDisplay(sentence: sentence, typedText: gameState.typedText)
-                .padding(.horizontal)
-
-            // Progress bars for all players
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    if let players = gameState.race?.sortedPlayers {
-                        ForEach(players) { player in
-                            PlayerProgressBar(
-                                player: player,
-                                isLocal: player.id == gameState.localPlayerId
-                            )
-                        }
-                    }
+            VStack(spacing: 16) {
+                // Timer + WPM header
+                HStack {
+                    Label(formatTime(gameState.elapsedSeconds), systemImage: "timer")
+                        .font(.headline.monospacedDigit())
+                    Spacer()
+                    Label("\(gameState.wpm) WPM", systemImage: "bolt.fill")
+                        .font(.headline.monospacedDigit())
+                        .foregroundStyle(.orange)
                 }
                 .padding(.horizontal)
+                .padding(.top, 8)
+
+                // Quote attribution
+                if let race = gameState.race {
+                    Text("— \(race.quoteAuthor), \(race.quoteSource)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding(.horizontal)
+                }
+
+                // Target sentence with character highlighting
+                SentenceDisplay(sentence: sentence, typedText: gameState.typedText)
+                    .padding(.horizontal)
+
+                // Progress bars for all players
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        if let players = gameState.race?.sortedPlayers {
+                            ForEach(players) { player in
+                                PlayerProgressBar(
+                                    player: player,
+                                    isLocal: player.id == gameState.localPlayerId
+                                )
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+
+                Spacer()
+
+                // Typing input
+                TextField("Start typing...", text: Binding(
+                    get: { gameState.typedText },
+                    set: { gameState.onTypingChanged($0) }
+                ))
+                .textFieldStyle(.roundedBorder)
+                .font(.body.monospaced())
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
+                .keyboardType(.asciiCapable)
+                .focused($isInputFocused)
+                .padding(.horizontal)
+                .padding(.bottom, 16)
+                .disabled(!gameState.isConnected)
+                .onAppear { isInputFocused = true }
             }
-
-            Spacer()
-
-            // Typing input
-            TextField("Start typing...", text: Binding(
-                get: { gameState.typedText },
-                set: { gameState.onTypingChanged($0) }
-            ))
-            .textFieldStyle(.roundedBorder)
-            .font(.body.monospaced())
-            .autocorrectionDisabled()
-            .textInputAutocapitalization(.never)
-            .keyboardType(.asciiCapable)
-            .focused($isInputFocused)
-            .padding(.horizontal)
-            .padding(.bottom, 16)
-            .onAppear { isInputFocused = true }
+            .opacity(gameState.isConnected ? 1.0 : 0.5)
+            .animation(.easeInOut(duration: 0.3), value: gameState.isConnected)
         }
     }
 

@@ -18,11 +18,13 @@ final class GameState: ObservableObject {
     @Published var typedText: String = ""
     @Published var wpm: Int = 0
     @Published var elapsedSeconds: TimeInterval = 0
+    @Published var isConnected: Bool = true
 
     private lazy var raceService = RaceService.shared
     private var raceStartTime: Date?
     private var progressTimer: Timer?
     private var lastPushTime: Date = .distantPast
+    private var connectionCancellable: AnyCancellable?
 
     init() {
         if let stored = UserDefaults(suiteName: "group.com.typeracer.shared")?.string(forKey: "playerId") {
@@ -33,6 +35,12 @@ final class GameState: ObservableObject {
             localPlayerId = newId
         }
         localNickname = UserDefaults(suiteName: "group.com.typeracer.shared")?.string(forKey: "nickname") ?? "Player"
+
+        connectionCancellable = RaceService.shared.$isConnected
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] connected in
+                self?.isConnected = connected
+            }
     }
 
     func saveNickname(_ name: String) {
@@ -165,5 +173,7 @@ final class GameState: ObservableObject {
     func cleanup() {
         progressTimer?.invalidate()
         raceService.stopObserving()
+        connectionCancellable?.cancel()
+        connectionCancellable = nil
     }
 }
