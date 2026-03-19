@@ -46,9 +46,13 @@ extension String {
         return count
     }
 
+    /// Minimum elapsed seconds before WPM is calculated, to avoid inflated values near zero.
+    static let wpmMinimumElapsedSeconds: TimeInterval = 2.0
+
     /// Calculates words per minute given elapsed seconds and correct character count.
+    /// Returns 0 if fewer than `wpmMinimumElapsedSeconds` have elapsed to prevent inflation.
     static func wpm(correctChars: Int, elapsedSeconds: TimeInterval) -> Int {
-        guard elapsedSeconds > 0 else { return 0 }
+        guard elapsedSeconds >= wpmMinimumElapsedSeconds else { return 0 }
         // Standard: 1 word = 5 characters
         let words = Double(correctChars) / 5.0
         let minutes = elapsedSeconds / 60.0
