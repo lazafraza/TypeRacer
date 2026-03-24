@@ -5,14 +5,13 @@ import FirebaseCore
 
 class MessagesViewController: MSMessagesAppViewController {
 
-    private var gameState: GameState!
+    private var gameState = GameState()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
         }
-        gameState = GameState()
     }
 
     override func willBecomeActive(with conversation: MSConversation) {
@@ -73,9 +72,13 @@ class MessagesViewController: MSMessagesAppViewController {
     }
 
     private func sendRaceMessage(conversation: MSConversation, raceId: String, status: RaceStatus, winnerName: String?, winnerWPM: Int?) {
+        guard let encodedURL = MessageURLCoder.encode(raceId: raceId, status: status, winnerName: winnerName, winnerWPM: winnerWPM) else {
+            print("Failed to encode message URL")
+            return
+        }
         let session = conversation.selectedMessage?.session ?? MSSession()
         let message = MSMessage(session: session)
-        message.url = MessageURLCoder.encode(raceId: raceId, status: status, winnerName: winnerName, winnerWPM: winnerWPM)
+        message.url = encodedURL
 
         let layout = MSMessageTemplateLayout()
         switch status {
