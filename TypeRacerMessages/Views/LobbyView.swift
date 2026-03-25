@@ -67,24 +67,18 @@ struct LobbyView: View {
 
             Spacer()
 
-            // Start button (creator only, 2+ players)
-            if isCreator {
-                Button(action: onStartRace) {
-                    Text(canStart ? "Start Race" : "Waiting for players...")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(canStart ? Color.green : Color.gray)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                }
-                .disabled(!canStart)
-                .padding(.horizontal)
-            } else {
-                Text("Waiting for host to start...")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+            // Start button (any player, 2+ players)
+            Button(action: onStartRace) {
+                Text(canStart ? "Start Race" : "Waiting for players...")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(canStart ? Color.green : Color.gray)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
             }
+            .disabled(!canStart)
+            .padding(.horizontal)
 
             // Tap send reminder
             Text("Tap Send to share this race with your group!")
