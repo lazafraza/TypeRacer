@@ -40,8 +40,21 @@ struct LobbyView: View {
 
             // Player list
             VStack(alignment: .leading, spacing: 8) {
-                Text("Players (\(gameState.race?.playerCount ?? 0))")
-                    .font(.headline)
+                HStack {
+                    Text("Players (\(gameState.race?.playerCount ?? 0))")
+                        .font(.headline)
+                    Spacer()
+                    if !gameState.isConnected {
+                        HStack(spacing: 4) {
+                            Circle()
+                                .fill(Color.red)
+                                .frame(width: 8, height: 8)
+                            Text("Offline")
+                                .font(.caption.bold())
+                                .foregroundStyle(.red)
+                        }
+                    }
+                }
 
                 if let players = gameState.race?.sortedPlayers {
                     ForEach(players) { player in

@@ -13,8 +13,31 @@ final class RaceService: ObservableObject {
     private var raceHandle: DatabaseHandle?
 
     @Published var currentRace: Race?
+    @Published var isConnected: Bool = true
 
-    private init() {}
+    private var connectedRef: DatabaseReference?
+    private var connectedHandle: DatabaseHandle?
+
+    private init() {
+        startMonitoringConnection()
+    }
+
+    // MARK: - Connection Monitoring
+
+    private func startMonitoringConnection() {
+        connectedRef = Database.database().reference(withPath: ".info/connected")
+        connectedHandle = connectedRef?.observe(.value) { [weak self] snapshot in
+            let connected = snapshot.value as? Bool ?? false
+            DispatchQueue.main.async {
+                self?.isConnected = connected
+            }
+            if connected {
+                print("[TypeRacer] Firebase connected")
+            } else {
+                print("[TypeRacer] Firebase disconnected")
+            }
+        }
+    }
 
     // MARK: - Race Lifecycle
 
@@ -145,6 +168,14 @@ final class RaceService: ObservableObject {
         }
         raceHandle = nil
         raceRef = nil
+    }
+
+    func stopMonitoringConnection() {
+        if let handle = connectedHandle {
+            connectedRef?.removeObserver(withHandle: handle)
+        }
+        connectedHandle = nil
+        connectedRef = nil
     }
 
     // MARK: - Fetch Once
