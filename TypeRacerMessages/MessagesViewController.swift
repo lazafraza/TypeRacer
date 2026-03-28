@@ -148,6 +148,8 @@ struct ExtensionRootView: View {
                             let winner = race.winner
                             onSendMessage(race.id, .finished, winner?.nickname, winner?.wpm)
                         }
+                    }, onRematch: {
+                        gameState.requestRematch()
                     })
                 }
             }
