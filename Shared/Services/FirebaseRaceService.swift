@@ -106,9 +106,18 @@ final class RaceService: ObservableObject {
 
     // MARK: - Fetch Once
 
-    func fetchRace(raceId: String) -> Race? {
-        // For synchronous access, return cached value
-        currentRace?.id == raceId ? currentRace : nil
+    func fetchRace(raceId: String) async -> Race? {
+        do {
+            let snapshot = try await db.child("races").child(raceId).getData()
+            guard let dict = snapshot.value as? [String: Any],
+                  let data = try? JSONSerialization.data(withJSONObject: dict),
+                  let race = try? JSONDecoder().decode(Race.self, from: data) else {
+                return nil
+            }
+            return race
+        } catch {
+            return nil
+        }
     }
 }
 
