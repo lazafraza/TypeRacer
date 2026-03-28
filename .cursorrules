@@ -1,0 +1,43 @@
+# TypeRacer — Cursor rules
+
+## What this is
+
+- **Stack**: Swift 5.9, SwiftUI, iOS **17.0+** (see `project.yml`).
+- **Architecture**: Host app target **TypeRacer** + iMessage extension **TypeRacerMessages**; shared code lives in **`Shared/`** (models, services, reusable views).
+- **Backend**: **Firebase Realtime Database** via the Firebase iOS SDK (Swift Package Manager, declared in `project.yml` / `TypeRacer.xcodeproj`).
+- **Project definition**: **`project.yml`** is the source of truth for XcodeGen. Regenerate the Xcode project after meaningful `project.yml` changes: `xcodegen generate` (from repo root). Prefer editing `project.yml` for targets, dependencies, bundle IDs, and entitlements rather than hand-editing `project.pbxproj` unless you have a strong reason.
+
+## Directory map
+
+- **`TypeRacer/`** — Main app entry (`TypeRacerApp.swift`), app-only views, `Info.plist`, entitlements, `GoogleService-Info.plist`.
+- **`TypeRacerMessages/`** — `MessagesViewController`, extension-only views, `Info.plist`, entitlements, `GoogleService-Info.plist`.
+- **`Shared/`** — Cross-target code; must remain safe for **both** the app and the Messages extension (no app-only APIs unless clearly isolated).
+
+## Firebase & secrets
+
+- **`GoogleService-Info.plist`** exists under both targets for local/dev; **do not commit real production secrets** if the repo is or will be public. Follow `README.md` guidance on ignoring or redacting these files when appropriate.
+- Firebase is configured in the app delegate / `MessagesViewController` (`FirebaseApp.configure()`); keep a single, predictable configuration path and avoid duplicate conflicting setup.
+
+## iMessage extension behavior
+
+- Extension UI is driven from **`MessagesViewController`** (UIKit) hosting SwiftUI; respect **compact vs expanded** presentation and `MSConversation` / message URL flows when changing navigation or state.
+- Prefer **`[weak self]`** in closures that capture the view controller or long-lived coordinators to avoid retain cycles.
+
+## Swift & SwiftUI conventions
+
+- Prefer **structured concurrency** (`async`/`await`, `Task`) where the codebase already uses it; match existing error-handling style.
+- Avoid **force unwraps** in shared encoding/decoding paths (e.g. message URLs); use guards and explicit failure paths.
+- Keep **Shared** types **Codable-friendly** and Firebase-serialization-friendly when they cross the wire.
+- Match existing naming: views suffixed with `View`, services clearly named (`*Service`), game state in dedicated types (e.g. `GameState`).
+
+## AI / edit discipline
+
+- **Scope**: Change only what the task requires; no unrelated refactors or cosmetic churn in untouched files.
+- **Targets**: When adding files, ensure they are included in the correct target(s) in `project.yml` (or the generated project) — especially **`Shared`** vs extension-only vs app-only.
+- **Do not** add unsolicited markdown docs unless the user asks.
+- When citing code in chat, use the project’s normal path format; in-repo references should point at real paths under `TypeRacer/`, `TypeRacerMessages/`, or `Shared/`.
+
+## Running locally
+
+- Open **`TypeRacer.xcodeproj`** in Xcode; run the **TypeRacer** scheme. The Messages extension is built as a dependency; test multiplayer flows inside **Messages** on a device or simulator.
+- Both targets need valid **signing** (team) for device installs.
