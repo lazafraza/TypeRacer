@@ -3,11 +3,6 @@ import SwiftUI
 struct ResultsView: View {
     @ObservedObject var gameState: GameState
     let onShareResults: () -> Void
-    let onRematch: () -> Void
-
-    private var canRematch: Bool {
-        (gameState.race?.playerCount ?? 0) >= 2
-    }
 
     private var rankedPlayers: [Player] {
         guard let race = gameState.race else { return [] }
@@ -105,19 +100,6 @@ struct ResultsView: View {
             .padding(.horizontal)
 
             Spacer()
-
-            if canRematch {
-                Button(action: onRematch) {
-                    Text("Rematch")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.green)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                }
-                .padding(.horizontal)
-            }
 
             // Share results button
             Button(action: onShareResults) {

@@ -22,7 +22,6 @@ final class GameState: ObservableObject {
     private lazy var raceService = RaceService.shared
     private var raceStartTime: Date?
     private var progressTimer: Timer?
-    private var countdownTask: Task<Void, Never>?
     private var lastPushTime: Date = .distantPast
 
     init() {
@@ -70,41 +69,16 @@ final class GameState: ObservableObject {
 
     func startCountdown() {
         guard let raceId = race?.id else { return }
-        countdownTask?.cancel()
         phase = .countdown(3)
         raceService.startCountdown(raceId: raceId)
 
-        let capturedRaceId = raceId
-        countdownTask = Task { [weak self] in
+        // Animate countdown locally
+        Task {
             for i in stride(from: 3, through: 1, by: -1) {
-                if Task.isCancelled { return }
-                await MainActor.run {
-                    guard let self, !Task.isCancelled else { return }
-                    self.phase = .countdown(i)
-                }
+                phase = .countdown(i)
                 try? await Task.sleep(for: .seconds(1))
             }
-            guard !Task.isCancelled else { return }
-            await MainActor.run { [weak self] in
-                guard let self, !Task.isCancelled else { return }
-                self.raceService.startRacing(raceId: capturedRaceId)
-            }
-        }
-    }
-
-    // MARK: - Rematch
-
-    func requestRematch() {
-        guard let race, race.playerCount >= 2, race.status == .finished else { return }
-        let quote = QuoteService.shared.randomQuote(difficulty: .medium)
-        let raceId = race.id
-        Task {
-            try? await raceService.resetRaceForRematch(
-                raceId: raceId,
-                sentence: quote.text,
-                quoteAuthor: quote.author,
-                quoteSource: quote.source
-            )
+            raceService.startRacing(raceId: raceId)
         }
     }
 
@@ -174,14 +148,6 @@ final class GameState: ObservableObject {
                 self.race = updatedRace
 
                 switch updatedRace.status {
-                case .waiting:
-                    switch self.phase {
-                    case .finished, .racing, .countdown:
-                        self.resetLocalForNewRound()
-                        self.phase = .lobby
-                    case .lobby, .compact:
-                        break
-                    }
                 case .racing:
                     if case .racing = self.phase { } else {
                         self.beginRacing()
@@ -189,30 +155,16 @@ final class GameState: ObservableObject {
                 case .finished:
                     self.progressTimer?.invalidate()
                     self.phase = .finished
-                case .countdown:
+                default:
                     break
                 }
             }
         }
     }
 
-    private func resetLocalForNewRound() {
-        countdownTask?.cancel()
-        countdownTask = nil
-        progressTimer?.invalidate()
-        progressTimer = nil
-        raceStartTime = nil
-        typedText = ""
-        wpm = 0
-        elapsedSeconds = 0
-        lastPushTime = .distantPast
-    }
-
     // MARK: - Cleanup
 
     func cleanup() {
-        countdownTask?.cancel()
-        countdownTask = nil
         progressTimer?.invalidate()
         raceService.stopObserving()
     }
