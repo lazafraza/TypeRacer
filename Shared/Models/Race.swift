@@ -38,11 +38,29 @@ struct Race: Codable, Identifiable {
         players.values.sorted { ($0.progress, $0.wpm) > ($1.progress, $1.wpm) }
     }
 
+    /// Finishers ranked for results: highest WPM first; ties broken by earlier `finishedAt`; then DNFs by progress.
+    var playersRankedForResults: [Player] {
+        players.values.sorted(by: Self.resultsDisplayOrder)
+    }
+
+    /// Highest WPM among finishers; ties broken by earlier `finishedAt`.
     var winner: Player? {
-        players.values
-            .filter { $0.finishedAt != nil }
-            .min { ($0.finishedAt ?? .infinity) < ($1.finishedAt ?? .infinity) }
+        playersRankedForResults.first(where: \.hasFinished)
     }
 
     var playerCount: Int { players.count }
+
+    private static func resultsDisplayOrder(lhs: Player, rhs: Player) -> Bool {
+        switch (lhs.hasFinished, rhs.hasFinished) {
+        case (true, true):
+            if lhs.wpm != rhs.wpm { return lhs.wpm > rhs.wpm }
+            return (lhs.finishedAt ?? .infinity) < (rhs.finishedAt ?? .infinity)
+        case (true, false):
+            return true
+        case (false, true):
+            return false
+        default:
+            return lhs.progress > rhs.progress
+        }
+    }
 }
