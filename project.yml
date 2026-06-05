@@ -25,12 +25,18 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.fuzzaslam.typeracer
+        DEVELOPMENT_TEAM: XUG77CV48T
+        CODE_SIGN_STYLE: Automatic
+        MARKETING_VERSION: 1.0
+        CURRENT_PROJECT_VERSION: 1
         INFOPLIST_FILE: TypeRacer/Info.plist
         CODE_SIGN_ENTITLEMENTS: TypeRacer/TypeRacer.entitlements
     dependencies:
       - target: TypeRacerMessages
       - package: FirebaseSDK
         product: FirebaseDatabase
+      - package: FirebaseSDK
+        product: FirebaseAuth
     entitlements:
       path: TypeRacer/TypeRacer.entitlements
       properties:
@@ -46,12 +52,18 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.fuzzaslam.typeracer.messages
+        DEVELOPMENT_TEAM: XUG77CV48T
+        CODE_SIGN_STYLE: Automatic
+        MARKETING_VERSION: 1.0
+        CURRENT_PROJECT_VERSION: 1
         INFOPLIST_FILE: TypeRacerMessages/Info.plist
         CODE_SIGN_ENTITLEMENTS: TypeRacerMessages/TypeRacerMessages.entitlements
         PRODUCT_NAME: TypeRacerMessages
     dependencies:
       - package: FirebaseSDK
         product: FirebaseDatabase
+      - package: FirebaseSDK
+        product: FirebaseAuth
     entitlements:
       path: TypeRacerMessages/TypeRacerMessages.entitlements
       properties:

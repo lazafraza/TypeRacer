@@ -14,6 +14,15 @@ struct RaceView: View {
 
     var body: some View {
         VStack(spacing: 16) {
+            if !gameState.isConnected {
+                Label("Connection lost. Waiting to reconnect...", systemImage: "wifi.slash")
+                    .font(.caption)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(.yellow.opacity(0.2), in: Capsule())
+                    .padding(.top, 8)
+            }
+
             // Timer + WPM header
             HStack {
                 Label(formatTime(gameState.elapsedSeconds), systemImage: "timer")

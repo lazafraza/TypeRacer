@@ -35,7 +35,21 @@ struct Race: Codable, Identifiable {
     }
 
     var sortedPlayers: [Player] {
-        players.values.sorted { ($0.progress, $0.wpm) > ($1.progress, $1.wpm) }
+        players.values.sorted { a, b in
+            switch (a.hasFinished, b.hasFinished) {
+            case (true, true):
+                if a.wpm != b.wpm {
+                    return a.wpm > b.wpm
+                }
+                return (a.finishedAt ?? .infinity) < (b.finishedAt ?? .infinity)
+            case (true, false):
+                return true
+            case (false, true):
+                return false
+            case (false, false):
+                return a.progress > b.progress
+            }
+        }
     }
 
     /// Finishers ranked for results: highest WPM first; ties broken by earlier `finishedAt`; then DNFs by progress.

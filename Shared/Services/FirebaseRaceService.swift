@@ -1,5 +1,6 @@
 import Foundation
 import FirebaseDatabase
+import FirebaseAuth
 
 private enum RaceServiceError: Error {
     case invalidRaceSnapshot
@@ -11,10 +12,26 @@ final class RaceService: ObservableObject {
     private lazy var db = Database.database().reference()
     private var raceRef: DatabaseReference?
     private var raceHandle: DatabaseHandle?
+    private var connectionRef: DatabaseReference?
+    private var connectionHandle: DatabaseHandle?
 
     @Published var currentRace: Race?
+    @Published var isConnected: Bool = true
 
     private init() {}
+
+    // MARK: - Auth
+
+    func authenticateAnonymouslyIfNeeded(completion: ((Error?) -> Void)? = nil) {
+        if Auth.auth().currentUser != nil {
+            completion?(nil)
+            return
+        }
+
+        Auth.auth().signInAnonymously { _, error in
+            completion?(error)
+        }
+    }
 
     // MARK: - Race Lifecycle
 
@@ -37,8 +54,12 @@ final class RaceService: ObservableObject {
     }
 
     func joinRace(raceId: String, player: Player) {
-        if let dict = player.asFirebaseDict() {
-            db.child("races").child(raceId).child("players").child(player.id).setValue(dict)
+        let playerRef = db.child("races").child(raceId).child("players").child(player.id)
+        playerRef.getData { error, snapshot in
+            guard error == nil, let snapshot, !snapshot.exists() else { return }
+            if let dict = player.asFirebaseDict() {
+                playerRef.setValue(dict)
+            }
         }
     }
 
@@ -112,6 +133,12 @@ final class RaceService: ObservableObject {
         ])
     }
 
+    func updatePlayerNickname(raceId: String, playerId: String, nickname: String) {
+        db.child("races").child(raceId).child("players").child(playerId).updateChildValues([
+            "nickname": nickname,
+        ])
+    }
+
     func markPlayerFinished(raceId: String, playerId: String, wpm: Int) {
         db.child("races").child(raceId).child("players").child(playerId).updateChildValues([
             "progress": 1.0,
@@ -145,6 +172,29 @@ final class RaceService: ObservableObject {
         }
         raceHandle = nil
         raceRef = nil
+    }
+
+    // MARK: - Connectivity
+
+    func startMonitoringConnection(onChange: ((Bool) -> Void)? = nil) {
+        stopMonitoringConnection()
+
+        connectionRef = Database.database().reference(withPath: ".info/connected")
+        connectionHandle = connectionRef?.observe(.value) { [weak self] snapshot in
+            let connected = (snapshot.value as? Bool) == true
+            DispatchQueue.main.async {
+                self?.isConnected = connected
+                onChange?(connected)
+            }
+        }
+    }
+
+    func stopMonitoringConnection() {
+        if let handle = connectionHandle {
+            connectionRef?.removeObserver(withHandle: handle)
+        }
+        connectionHandle = nil
+        connectionRef = nil
     }
 
     // MARK: - Fetch Once

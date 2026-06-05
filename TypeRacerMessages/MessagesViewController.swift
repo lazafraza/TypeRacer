@@ -2,6 +2,7 @@ import UIKit
 import Messages
 import SwiftUI
 import FirebaseCore
+import FirebaseAuth
 
 class MessagesViewController: MSMessagesAppViewController {
 
@@ -11,6 +12,11 @@ class MessagesViewController: MSMessagesAppViewController {
         super.viewDidLoad()
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
+        }
+        RaceService.shared.authenticateAnonymouslyIfNeeded { error in
+            if let error {
+                print("Anonymous auth failed: \(error)")
+            }
         }
     }
 
@@ -30,11 +36,10 @@ class MessagesViewController: MSMessagesAppViewController {
         guard let url = message.url,
               let decoded = MessageURLCoder.decode(url: url) else { return }
 
+        requestPresentationStyle(.expanded)
         if decoded.status == .finished {
-            gameState.phase = .finished
-            gameState.joinRace(raceId: decoded.raceId)
+            gameState.loadRace(raceId: decoded.raceId, initialPhase: .finished)
         } else {
-            requestPresentationStyle(.expanded)
             gameState.joinRace(raceId: decoded.raceId)
         }
     }
@@ -130,9 +135,10 @@ struct ExtensionRootView: View {
                 switch gameState.phase {
                 case .compact:
                     CompactView(onStartRace: {
-                        gameState.createRace()
-                        if let raceId = gameState.race?.id {
-                            onSendMessage(raceId, .waiting, nil, nil)
+                        gameState.createRace { success in
+                            if success, let raceId = gameState.race?.id {
+                                onSendMessage(raceId, .waiting, nil, nil)
+                            }
                         }
                     })
                 case .lobby:
@@ -153,6 +159,18 @@ struct ExtensionRootView: View {
                         gameState.requestRematch()
                     })
                 }
+            }
+        }
+        .alert("Couldn't Continue", isPresented: Binding(
+            get: { gameState.actionError != nil },
+            set: { if !$0 { gameState.clearActionError() } }
+        )) {
+            Button("OK", role: .cancel) {
+                gameState.clearActionError()
+            }
+        } message: {
+            if let actionError = gameState.actionError {
+                Text(actionError)
             }
         }
     }

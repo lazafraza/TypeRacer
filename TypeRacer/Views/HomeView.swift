@@ -192,7 +192,7 @@ struct HowToPlayView: View {
                      description: "The host taps Start. After a 3-2-1 countdown, everyone types the same sentence as fast as they can. You'll see live progress bars for all racers.")
 
                 step(number: 5, title: "Win",
-                     description: "First to type the full sentence correctly wins! Results are shared back to the group chat.")
+                     description: "Highest WPM among finishers wins (ties go to earliest finish). Results are shared back to the group chat.")
             }
             .padding(24)
         }
