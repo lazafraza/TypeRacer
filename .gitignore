@@ -29,3 +29,7 @@ Pods/
 *.swp
 *~
 .DS_Store
+
+# Firebase secrets
+TypeRacer/GoogleService-Info.plist
+TypeRacerMessages/GoogleService-Info.plist

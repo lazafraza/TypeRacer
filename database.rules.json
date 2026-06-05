@@ -1,0 +1,33 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "races": {
+      "$raceId": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "players": {
+          "$playerId": {
+            ".read": "auth != null",
+            ".write": "auth != null && auth.uid === $playerId",
+            "nickname": {
+              ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 24"
+            },
+            "progress": {
+              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 1"
+            },
+            "wpm": {
+              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 500"
+            },
+            "finishedAt": {
+              ".validate": "newData.isNumber() || newData.val() == null"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

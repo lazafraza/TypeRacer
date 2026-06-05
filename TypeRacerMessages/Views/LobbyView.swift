@@ -4,11 +4,6 @@ struct LobbyView: View {
     @ObservedObject var gameState: GameState
     let onStartRace: () -> Void
 
-    private var isCreator: Bool {
-        guard let race = gameState.race else { return false }
-        return race.players[gameState.localPlayerId]?.isCreator == true
-    }
-
     private var canStart: Bool {
         (gameState.race?.playerCount ?? 0) >= 2
     }
