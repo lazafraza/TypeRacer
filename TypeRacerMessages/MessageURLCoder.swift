@@ -3,8 +3,8 @@ import Foundation
 struct MessageURLCoder {
     private static let baseURL = "https://typeracer.app"
 
-    static func encode(raceId: String, status: RaceStatus = .waiting, winnerName: String? = nil, winnerWPM: Int? = nil) -> URL {
-        var components = URLComponents(string: baseURL)!
+    static func encode(raceId: String, status: RaceStatus = .waiting, winnerName: String? = nil, winnerWPM: Int? = nil) -> URL? {
+        guard var components = URLComponents(string: baseURL) else { return nil }
         var items = [
             URLQueryItem(name: "raceId", value: raceId),
             URLQueryItem(name: "status", value: status.rawValue),
@@ -16,7 +16,7 @@ struct MessageURLCoder {
             items.append(URLQueryItem(name: "wpm", value: String(winnerWPM)))
         }
         components.queryItems = items
-        return components.url!
+        return components.url
     }
 
     static func decode(url: URL) -> (raceId: String, status: RaceStatus, winnerName: String?, winnerWPM: Int?)? {

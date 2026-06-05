@@ -1,6 +1,10 @@
 import Foundation
 import FirebaseDatabase
 
+private enum RaceServiceError: Error {
+    case invalidRaceSnapshot
+}
+
 final class RaceService: ObservableObject {
     static let shared = RaceService()
 
@@ -60,6 +64,45 @@ final class RaceService: ObservableObject {
         ])
     }
 
+    /// Resets the same race id for a rematch: new quote, `waiting` status, cleared timers and per-player progress.
+    func resetRaceForRematch(
+        raceId: String,
+        sentence: String,
+        quoteAuthor: String,
+        quoteSource: String
+    ) async throws {
+        let ref = db.child("races").child(raceId)
+        let snapshot = try await ref.getData()
+        guard let dict = snapshot.value as? [String: Any],
+              let players = dict["players"] as? [String: Any] else {
+            throw RaceServiceError.invalidRaceSnapshot
+        }
+
+        var updates: [String: Any] = [
+            "status": RaceStatus.waiting.rawValue,
+            "sentence": sentence,
+            "quoteAuthor": quoteAuthor,
+            "quoteSource": quoteSource,
+            "countdownStartAt": NSNull(),
+            "raceStartAt": NSNull(),
+        ]
+        for playerId in players.keys {
+            updates["players/\(playerId)/progress"] = 0
+            updates["players/\(playerId)/wpm"] = 0
+            updates["players/\(playerId)/finishedAt"] = NSNull()
+        }
+
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+            ref.updateChildValues(updates) { error, _ in
+                if let error {
+                    continuation.resume(throwing: error)
+                } else {
+                    continuation.resume()
+                }
+            }
+        }
+    }
+
     // MARK: - Player Progress
 
     func updateProgress(raceId: String, playerId: String, progress: Double, wpm: Int) {
@@ -106,9 +149,18 @@ final class RaceService: ObservableObject {
 
     // MARK: - Fetch Once
 
-    func fetchRace(raceId: String) -> Race? {
-        // For synchronous access, return cached value
-        currentRace?.id == raceId ? currentRace : nil
+    func fetchRace(raceId: String) async -> Race? {
+        do {
+            let snapshot = try await db.child("races").child(raceId).getData()
+            guard let dict = snapshot.value as? [String: Any],
+                  let data = try? JSONSerialization.data(withJSONObject: dict),
+                  let race = try? JSONDecoder().decode(Race.self, from: data) else {
+                return nil
+            }
+            return race
+        } catch {
+            return nil
+        }
     }
 }
 
