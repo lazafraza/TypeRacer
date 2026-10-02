@@ -14,6 +14,7 @@
 		271E4D19BEFEEDB71B3A6CE7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B72C5CA2F2B680D8477617E1 /* FirebaseDatabase */; };
 		316EA4F075821F7A03F3772B /* TypeRacerMessages.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C93374391A4211697B3EFB96 /* TypeRacerMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		431429995F586A92502466C4 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26358E5BAC2B70BD8B0B2AAB /* GameState.swift */; };
+		4A1C9E2F8B6D4E0A9C3F7125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F8C1A4B7E9D3056A1B2C3D4 /* Assets.xcassets */; };
 		6A4036DE528B9449CDD4DE9E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6892D3647D6CE588424F10D1 /* FirebaseAuth */; };
 		742B84CF997A689817FC583C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C20555738D455E1D75FE6FCB /* GoogleService-Info.plist */; };
 		7E1D2DF50FE77AE151B6A634 /* String+TypeRacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573D427892A3B314E1EE079 /* String+TypeRacer.swift */; };
@@ -21,6 +22,7 @@
 		8A0AE5097AA944187CCF8D74 /* String+TypeRacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573D427892A3B314E1EE079 /* String+TypeRacer.swift */; };
 		8BF594540D6AB3E7176A9101 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 64B2DD8ED18CA787399BCB4B /* quotes.json */; };
 		8D481957E9F93B8564F474A7 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D379460E9E124F8EB8481CD /* Race.swift */; };
+		9B2E7D4C1A5F8036E9C0D1A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C8D2E9F4A1B7063C0D1E2F3 /* Assets.xcassets */; };
 		A870F36F3A6D4868ECB238E8 /* MessageURLCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69FFAFA0E950535746672D /* MessageURLCoder.swift */; };
 		B1DAEB58C5310FCA0B47E64E /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EB19960285FAF3F107548 /* RaceView.swift */; };
 		B486C9AEE56C28DA1BAFAEF1 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675FA7AEBC975849292C97EA /* ResultsView.swift */; };
@@ -74,7 +76,9 @@
 		21A5A128939BA62078A11CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26358E5BAC2B70BD8B0B2AAB /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		2D8FA247C12123B489E72D17 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		2F8C1A4B7E9D3056A1B2C3D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		362ADB83ADC674369E3F45A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5C8D2E9F4A1B7063C0D1E2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2EB19960285FAF3F107548 /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		64B2DD8ED18CA787399BCB4B /* quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		675FA7AEBC975849292C97EA /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 		3B7338A4CD3A3F5529092A76 /* TypeRacerMessages */ = {
 			isa = PBXGroup;
 			children = (
+				5C8D2E9F4A1B7063C0D1E2F3 /* Assets.xcassets */,
 				26358E5BAC2B70BD8B0B2AAB /* GameState.swift */,
 				C20555738D455E1D75FE6FCB /* GoogleService-Info.plist */,
 				21A5A128939BA62078A11CB1 /* Info.plist */,
@@ -185,6 +190,7 @@
 		617E416581B73D6A8804AAF6 /* TypeRacer */ = {
 			isa = PBXGroup;
 			children = (
+				2F8C1A4B7E9D3056A1B2C3D4 /* Assets.xcassets */,
 				1BED4F7FAAC8E4373D68DE78 /* GoogleService-Info.plist */,
 				362ADB83ADC674369E3F45A8 /* Info.plist */,
 				16F8F3BE489F59763DF88556 /* TypeRacer.entitlements */,
@@ -327,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B2E7D4C1A5F8036E9C0D1A2 /* Assets.xcassets in Resources */,
 				742B84CF997A689817FC583C /* GoogleService-Info.plist in Resources */,
 				8BF594540D6AB3E7176A9101 /* quotes.json in Resources */,
 			);
@@ -336,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1C9E2F8B6D4E0A9C3F7125 /* Assets.xcassets in Resources */,
 				C659FF465176CC8C0320DF14 /* GoogleService-Info.plist in Resources */,
 				1EB78D9488866DCEA7888045 /* quotes.json in Resources */,
 			);
